@@ -18,18 +18,12 @@ class Camera:
 
     def takePicture(self):
         # take picture
-        now = datetime.datetime.now
-        filename = "%s%s%d%02d%02d_%02d%02d%02d" % \
-            (FOLDER_BASE, FILENAME_BASE, now.year, now.month, now.day, \
-             now.hour, now.minute, now.second)
+        now = datetime.datetime.now()
+        filename = "%s%s%d%02d%02d_%02d%02d%02d.jpg" % (FOLDER_BASE, FILENAME_BASE, now.year, now.month, now.day, now.hour, now.minute, now.second)
         
         self.camera.capture( filename )
 
 class CameraTest:
-
-	def __init__( self ):
-
-#	def tearDown( self ):
 
 	def runTest( self ):
 		camera = Camera()
@@ -41,7 +35,7 @@ class CameraTest:
 
 def main():
 	test = CameraTest()
-	test.runtTest()
+	test.runTest()
 	
 
 if __name__ == '__main__':
